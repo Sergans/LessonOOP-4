@@ -19,6 +19,19 @@ namespace LessonOOP_4_1
             this.Nomber = ++unicNomber;
 
         }
+        public float GetHeightFloor()
+        {
+            return this.Height / this.Floor;
+        }
+        public int GetApartmentInEntrance()
+        {
+            return this.Apartment / this.Entrance;
+        }
+        public int GetApartmentInFloor()
+        {
+            int apartmentInentance = GetApartmentInEntrance();
+            return apartmentInentance / this.Floor;
+        }
         public void Print()
         {
             Console.WriteLine(
@@ -33,11 +46,14 @@ namespace LessonOOP_4_1
     {
         static void Main(string[] args)
         {
-            Building building1 = new Building(5, 3, 50, 10);
+            Building building1 = new Building(5, 3, 48, 13);
             Building building2 = new Building(5, 3, 50, 10);
             building1.Print();
             Console.WriteLine();
             building2.Print();
+            Console.WriteLine(building1.GetHeightFloor());
+            Console.WriteLine(building1.GetApartmentInEntrance());
+            Console.WriteLine(building1.GetApartmentInFloor());
         }
     }
 }
