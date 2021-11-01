@@ -14,21 +14,8 @@ namespace LessonOOP_4_1
         private int Apartment=1;
         private float Height=5; 
         private static int unicNomber; 
-        //public Building(int floor,int entrance,int apartment,float height)
-        //{
-        //    this.Floor = floor;
-        //    this.Entrance = entrance;
-        //    this.Apartment = apartment;
-        //    this.Height = height;
-        //    this.Nomber = ++unicNomber;
-
-        //}
         public void CreateBuilding(int floor, int entrance, int apartment, float height)
         {
-            //string messagefloor;
-            //string messageentrance;
-            //string messageapartment;
-            //string messageheight;
             this.Nomber = ++unicNomber;
             if (floor >0)
             {
@@ -89,7 +76,10 @@ namespace LessonOOP_4_1
             $"Этажность- {this.Floor} {messagefloor}\r\n" +
             $"Количество подъездов- {this.Entrance} {messageentrance}\r\n" +
             $"Количество квартир- {this.Apartment} {messageapartment}\r\n" +
-            $"Высота здания- {this.Height} {messageheight}");
+            $"Высота здания- {this.Height} {messageheight}\r\n" +
+            $"Высота этажа-{GetHeightFloor()}\r\n" +
+            $"Количество квартир в подъезде-{GetApartmentInEntrance()}\r\n" +
+            $"Количество квартир на этаже-{GetApartmentInFloor()}");
         }
     }
     class Program
@@ -97,14 +87,9 @@ namespace LessonOOP_4_1
         static void Main(string[] args)
         {
             Building building1 = new Building();
-            building1.CreateBuilding(0, 0, 50, 4);
-           // Building building2 = new Building(5, 3, 50, 10);
+            building1.CreateBuilding(5, 3, 48, 24);
             building1.Print();
-            Console.WriteLine();
-           // building2.Print();
-            Console.WriteLine(building1.GetHeightFloor());
-            Console.WriteLine(building1.GetApartmentInEntrance());
-            Console.WriteLine(building1.GetApartmentInFloor());
+           
         }
     }
 }
